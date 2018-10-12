@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="e-shop-lazyload">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Lazy Loading test app</title>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body cz-shortcut-listen="true">
+
+    <div class="container">
+        <div class="page-header">
+            <h3>Lazy Loading Example</h3>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-info" ui-sref-active="active" ui-sref="products">Go to Products</button>
+                <button type="button" class="btn btn-info" ui-sref-active="active" ui-sref="checkout">Go to Checkout</button>
+                <button type="button" class="btn btn-info" ui-sref-active="active" ui-sref="mainmenu">Go to Main menu</button>
+            </div>
+        </div>
+        <div class="row">
+            <p class="text-danger">Note : Please open browser's console to see information about loading modules.</p>
+            <ui-view></ui-view>
+        </div>
+    </div>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="node_modules/oclazyload/dist/ocLazyLoad.min.js"></script>
+
+    <script src="webapp/app.js"></script>
+</body>
+</html>
