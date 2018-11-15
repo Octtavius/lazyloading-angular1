@@ -20,11 +20,6 @@ app.config(['$ocLazyLoadProvider', '$stateProvider', '$urlRouterProvider' , func
     $stateProvider
         .state('products', {
             url: "/products",
-            // views : {
-            //     "" : {
-            //         templateUrl:"webapp/shop/index.html"
-            //     }
-            // },
             templateUrl: "webapp/shop/index.html",
             controller: 'productsController',
             resolve: {
@@ -33,15 +28,10 @@ app.config(['$ocLazyLoadProvider', '$stateProvider', '$urlRouterProvider' , func
                 }]
             }
         })
-        .state('checkout', {
+        .state('products.checkout', {
             url: "/checkout",
             templateUrl: "webapp/shop/checkout.html",
-            controller: 'checkoutController',
-            resolve: {
-                loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
-                    return $ocLazyLoad.load('shop'); // Resolve promise and load before view
-                }]
-            }
+            controller: 'checkoutController'
         })
         .state('mainmenu', {
             url: "/mainmenu",
